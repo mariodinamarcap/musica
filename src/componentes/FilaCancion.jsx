@@ -2,7 +2,10 @@ import { useContext } from "react"
 import { ReproduccionContext } from "../context/ReproduccionContext"
 
 export const FilaCancion = ({ cancion }) => {
-    const { setCancionActual, setEstaSonando } = useContext(ReproduccionContext)
+    const { cancionActual, setCancionActual, setEstaSonando } = useContext(ReproduccionContext)
+
+    // ¿Esta fila es la que está sonando?
+    const esLaQueSuena = cancion.id === cancionActual?.id
 
     return (
         <button
@@ -11,6 +14,7 @@ export const FilaCancion = ({ cancion }) => {
                 setEstaSonando(true)
             }}
         >
+            {esLaQueSuena ? "🎶 " : ""}
             {cancion.titulo} - {cancion.artista}
         </button>
     )
