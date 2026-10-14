@@ -2,6 +2,7 @@ import { useState } from "react"
 import { ModoContext } from "./context/ModoContext"
 import { ReproduccionContext } from "./context/ReproduccionContext"
 import { Encabezado } from "./componentes/Encabezado"
+import { ListaCanciones } from "./componentes/ListaCanciones"
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
       >
         <Encabezado />
         <p>{modoOscuro ? "🌙 Modo oscuro" : "☀️ Modo claro"}</p>
-        {/* Aquí van a ir ListaCanciones y Reproductor */}
+        <ListaCanciones />
+        {/* Aquí va a ir el Reproductor */}
       </ReproduccionContext.Provider>
     </ModoContext.Provider>
   )
