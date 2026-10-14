@@ -3,6 +3,7 @@ import { ModoContext } from "./context/ModoContext"
 import { ReproduccionContext } from "./context/ReproduccionContext"
 import { Encabezado } from "./componentes/Encabezado"
 import { ListaCanciones } from "./componentes/ListaCanciones"
+import { Reproductor } from "./componentes/Reproductor"
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Encabezado />
         <p>{modoOscuro ? "🌙 Modo oscuro" : "☀️ Modo claro"}</p>
         <ListaCanciones />
+        <Reproductor />
         <p>Sonando: {cancionActual ? cancionActual.titulo : "nada"} — {estaSonando ? "▶️" : "⏸️"}</p>
         {/* Aquí va a ir el Reproductor */}
       </ReproduccionContext.Provider>
