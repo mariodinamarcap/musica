@@ -20,6 +20,7 @@ function App() {
         <Encabezado />
         <p>{modoOscuro ? "🌙 Modo oscuro" : "☀️ Modo claro"}</p>
         <ListaCanciones />
+        <p>Sonando: {cancionActual ? cancionActual.titulo : "nada"} — {estaSonando ? "▶️" : "⏸️"}</p>
         {/* Aquí va a ir el Reproductor */}
       </ReproduccionContext.Provider>
     </ModoContext.Provider>

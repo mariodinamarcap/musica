@@ -1,7 +1,17 @@
-
+import { useContext } from "react"
+import { ReproduccionContext } from "../context/ReproduccionContext"
 
 export const FilaCancion = ({ cancion }) => {
+    const { setCancionActual, setEstaSonando } = useContext(ReproduccionContext)
+
     return (
-        <p>{cancion.titulo} - {cancion.artista}</p>
+        <button
+            onClick={() => {
+                setCancionActual(cancion)
+                setEstaSonando(true)
+            }}
+        >
+            {cancion.titulo} - {cancion.artista}
+        </button>
     )
 }
