@@ -6,11 +6,16 @@ export const Reproductor = () => {
 
     return (
         <footer>
-            <p>
-                {cancionActual
-                    ? `${cancionActual.titulo} - ${cancionActual.artista}`
-                    : "Elige una canción"}
-            </p>
+            {cancionActual ? (
+                <>
+                    <p>{cancionActual.titulo} - {cancionActual.artista}</p>
+                    <button onClick={() => setEstaSonando(!estaSonando)}>
+                        {estaSonando ? "⏸️ Pausar" : "▶️ Reanudar"}
+                    </button>
+                </>
+            ) : (
+                <p>Elige una canción</p>
+            )}
         </footer>
     )
 }
