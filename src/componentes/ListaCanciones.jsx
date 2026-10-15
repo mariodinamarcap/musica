@@ -3,6 +3,8 @@ import { FilaCancion } from "./FilaCancion"
 
 export const ListaCanciones = () => {
   return (
-    canciones.map(cancion => <FilaCancion key={cancion.id} cancion={cancion} />)
+    <section className="flex flex-1 flex-col gap-2 p-6">
+      {canciones.map(cancion => <FilaCancion key={cancion.id} cancion={cancion} />)}
+    </section>
   )
 }

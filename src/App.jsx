@@ -6,9 +6,7 @@ import { ListaCanciones } from "./componentes/ListaCanciones"
 import { Reproductor } from "./componentes/Reproductor"
 
 function App() {
-
   const [modoOscuro, setModoOscuro] = useState(false)
-
 
   const [cancionActual, setCancionActual] = useState(null)
   const [estaSonando, setEstaSonando] = useState(false)
@@ -18,10 +16,15 @@ function App() {
       <ReproduccionContext.Provider
         value={{ cancionActual, setCancionActual, estaSonando, setEstaSonando }}
       >
-        <Encabezado />
-        <p>{modoOscuro ? "🌙 Modo oscuro" : "☀️ Modo claro"}</p>
-        <ListaCanciones />
-        <Reproductor />
+        <main
+          className={`flex min-h-screen flex-col ${
+            modoOscuro ? "bg-slate-900 text-slate-100" : "bg-slate-50 text-slate-900"
+          }`}
+        >
+          <Encabezado />
+          <ListaCanciones />
+          <Reproductor />
+        </main>
       </ReproduccionContext.Provider>
     </ModoContext.Provider>
   )
